@@ -73,7 +73,7 @@ print('X_test is formed.')
 #Классификатор, обучение и прогнозирование.
 
 print('Training starts')
-crf = sklearn_crfsuite.CRF()
+crf = sklearn_crfsuite.CRF(c1=0.01, c2=0.01, all_possible_transitions=True, max_iterations=150)
 crf.fit(X_train, y_train)
 print('Prediction starts')
 y_pred = crf.predict(X_test)
